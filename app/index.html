@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>playful solutions</title>
+  <meta name="description" content="Junges Produktdesign by Anja Wippler">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width">
+  <meta name="keywords" content="Design, Gestaltung, Produktdesign, Designprodukt, Wohnen, Dekoration, Geschenk, Wanddekoration, Stillleben, Inneneinrichtung, DIY, Vase, Lasercut">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+  <link rel="stylesheet" href="bower_components/angular-backtop/dist/angular-backtop.css" />
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <base href="/">
+</head>
+<body ng-app="pfswebApp">
+<!--[if lte IE 9]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div ui-view="navbar" ng-cloak id="mainNav"></div>
+<div id="wrap">
+  <div ui-view="content" autoscroll="false"></div>
+</div>
+<div class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-xs-9">
+        <a class="text-muted" href="https://www.instagram.com/playfuldesignsolutions/" target="_blank"><i
+          class="fa fa-instagram"></i></a>&nbsp;<a class="text-muted" href="https://www.facebook.com/flortrait/"
+                                                   target="_blank"><i class="fa fa-facebook-square"></i></a>&nbsp;<span><small>Anja Wippler | Produktdesignerin</small></span>
+      </div>
+      <div class="col-md-offset-2 col-md-2 col-sm-offset-1 col-sm-2 hidden-xs" style="text-align: center;">
+
+      </div>
+      <div class="col-md-offset-2 col-md-3 col-sm-offset-2 col-sm-3 col-xs-offset-0 col-xs-3">
+        <div class="pull-right">
+          <span><a ui-sref="impressum"><small>Impressum</small></a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  !function (A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-77345407-1');
+  ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-backtop/dist/angular-backtop.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/services/smoothAnchorScroll.service.js"></script>
+<script src="scripts/directives/active-link.directive.js"></script>
+<script src="scripts/directives/sticky-subnav.directive.js"></script>
+<script src="scripts/directives/setHeight.directive.js"></script>
+<script src="scripts/controllers/home.state.js"></script>
+<script src="scripts/controllers/impressum.state.js"></script>
+<script src="scripts/controllers/flortrait.state.js"></script>
+<script src="scripts/controllers/contact.state.js"></script>
+<script src="scripts/controllers/navbar.controller.js"></script>
+<script src="scripts/controllers/flortrait.controller.js"></script>
+<!-- endbuild -->
+</body>
+</html>

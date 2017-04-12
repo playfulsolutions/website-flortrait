@@ -1,0 +1,446 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$brand-primary: #008490;
+$fa-font-path: "../bower_components/components-font-awesome/fonts";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "components-font-awesome/scss/font-awesome.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Webfont: Lato-Light */
+@font-face {
+  font-family: 'LatoWebLight';
+  src: url('fonts/lato-googlefont/Lato-Light.eot'); /* IE9 Compat Modes */
+  src: url('fonts/lato-googlefont/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/lato-googlefont/Lato-Light.woff2') format('woff2'), /* Modern Browsers */
+  url('fonts/lato-googlefont/Lato-Light.woff') format('woff'), /* Modern Browsers */
+  url('fonts/lato-googlefont/Lato-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Lato-LightItalic */
+@font-face {
+  font-family: 'LatoWebLight';
+  src: url('fonts/lato-googlefont/Lato-LightItalic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/lato-googlefont/Lato-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/lato-googlefont/Lato-LightItalic.woff2') format('woff2'), /* Modern Browsers */
+  url('fonts/lato-googlefont/Lato-LightItalic.woff') format('woff'), /* Modern Browsers */
+  url('fonts/lato-googlefont/Lato-LightItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "LatoWebLight", sans-serif;
+  color: #333;
+  padding: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.margin-t-50 {
+  margin-top: 50px;
+}
+
+.margin-t-20 {
+  margin-top: 20px;
+}
+
+.halign-center {
+  text-align: center;
+}
+
+//Phones (XS)
+@media (max-width: 767px) {
+  .halign-center-xs {
+    text-align: center;
+  }
+
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 0 !important;
+    border-top: 0 !important;
+    background-color: rgb(247, 247, 247) !important;
+  }
+
+}
+
+//Tablets (SM)
+@media (min-width: 768px) and (max-width: 991px) {
+  h4 {
+    font-size: 16px;
+  }
+}
+
+//Tablets and up (SM, MD, LG)
+@media (min-width: 768px) {
+  .vcenter {
+    display: flex;
+    align-items: center;
+  }
+
+  .flortrait-section-b {
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .margin-t-40-lg {
+    margin-top: 40px;
+  }
+}
+
+.hero-text-box {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.flortrait-s01 {
+  display: inline-block;
+  width: 300px;
+  height: 350px;
+  background: url("../images/flortrait/flortrait-s01.jpg") no-repeat right top;
+  background-size: contain;
+}
+
+.flortrait-natur_bunt {
+  display: inline-block;
+  width: 300px;
+  height: 365px;
+  background: url("../images/flortrait/flortrait-natur_bunt.jpg") no-repeat right top;
+  background-size: contain;
+}
+
+.flortrait-twin_diy {
+  display: inline-block;
+  width: 300px;
+  height: 287px;
+  background: url("../images/flortrait/flortrait-2er_diy.jpg") no-repeat right top;
+  background-size: contain;
+}
+
+.flortrait-antik-lilastrauss {
+  display: inline-block;
+  width: 300px;
+  height: 424px;
+  background: url("../images/flortrait/flortrait-antik_lilastrauss.jpg") no-repeat right top;
+  background-size: contain;
+}
+
+.flortrait-preorder-bg01 {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  background: url("../images/flortrait/flortrait-preorder-bg01.jpg") no-repeat left top;
+  background-size: cover;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .flortrait-s01 {
+    background: url("../images/flortrait/flortrait-s01@2x.jpg") no-repeat center top;
+    background-size: contain;
+  }
+
+  .flortrait-natur_bunt {
+    background: url("../images/flortrait/flortrait-natur_bunt@2x.jpg") no-repeat right top;
+    background-size: contain;
+  }
+
+  .flortrait-twin_diy {
+    background: url("../images/flortrait/flortrait-2er_diy@2x.jpg") no-repeat right top;
+    background-size: contain;
+  }
+
+  .flortrait-antik-lilastrauss {
+    background: url("../images/flortrait/flortrait-antik_lilastrauss@2x.jpg") no-repeat right top;
+    background-size: contain;
+  }
+}
+
+.section-divider-gradient-buttom {
+  background: rgba(247, 247, 247, 1);
+  background: -moz-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247, 247, 247, 1)), color-stop(100%, rgba(255, 255, 255, 0.57)));
+  background: -webkit-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
+  background: -o-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
+  background: -ms-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
+  background: linear-gradient(to bottom, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#ffffff', GradientType=0);
+}
+
+.flortrait-section-a {
+  background-color: #f9f9f9;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  margin-top: 15px;
+  border-bottom: 1px #E1E1E1 solid;
+  border-top: 1px #E1E1E1 solid;
+}
+
+.flortrait-section-a-heading {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.flortrait-section-b {
+  padding-top: 10px;
+}
+
+.flortrait-order-choice-btn {
+  width: 100%;
+  font-size: 32px !important;
+  text-align: left;
+}
+
+@media (min-width: 992px) {
+
+  h1, .h1 {
+    font-size: 36px;
+  }
+
+  .hero-text-box {
+    padding-top: 160px;
+    padding-bottom: 40px;
+  }
+
+  .flortrait-s01 {
+    display: inline-block;
+    width: 600px;
+    height: 700px;
+  }
+
+  .flortrait-natur_bunt {
+    display: inline-block;
+    width: 500px;
+    height: 609px;
+  }
+
+  .flortrait-twin_diy {
+    display: inline-block;
+    width: 500px;
+    height: 473px;
+    padding-top: 0;
+    margin-top: 65px;
+  }
+
+  .flortrait-antik-lilastrauss {
+    display: inline-block;
+    width: 500px;
+    height: 705px;
+  }
+
+  .flortrait-section-top {
+    margin-bottom: 80px;
+  }
+
+  .flortrait-section-a {
+    padding-top: 40px;
+  }
+
+  .flortrait-section-a-heading {
+    text-align: left;
+    padding-top: 80px;
+  }
+
+  .flortrait-preorder-bg01 {
+    width: 40%;
+    height: 677px;
+  }
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: transparent;
+  border-bottom: 1px solid;
+}
+
+@media (min-width: 768px) {
+  .navbar-default, .navbar-collapse {
+    padding-right: 0;
+  }
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+    -webkit-transform: rotate(45deg);
+    -webkit-transform-origin: 10% 10%;
+    -ms-transform: rotate(45deg);
+    -ms-transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+    -webkit-transform: rotate(-45deg);
+    -webkit-transform-origin: 10% 90%;
+    -ms-transform: rotate(-45deg);
+    -ms-transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggle.collapsed {
+  .top-bar {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  .middle-bar {
+    opacity: 1;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+  }
+}
+
+.subnav {
+  margin: 0;
+  top: 0px;
+  z-index: 1020;
+  background-color: rgb(247, 247, 247);
+  border-bottom: 1px solid #E1E1E1;
+  padding: 0;
+}
+
+.subnav.affix {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+}
+
+.subnav.affix {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+}
+
+.buy-btn {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.buy-btn:focus {
+  outline: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: -55px;
+  width: 100%;
+  height: 55px;
+  padding-top: 20px;
+  background-color: rgba(189, 189, 189, 0.25);
+  border-top: 1px #E1E1E1 solid;
+}
+
+.pad {
+  padding: 10px;
+}
+
+.break {
+  white-space: normal;
+  word-break: break-all;
+}
+
+/* make sure browsers use the pointer cursor for anchors, even with no href */
+a:hover {
+  cursor: pointer;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+/* Remove Bootstrap padding from the element
+   http://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3 */
+@mixin no-padding($side) {
+  @if $side == 'all' {
+    .no-padding {
+      padding: 0 !important;
+    }
+  } @else {
+    .no-padding-#{$side} {
+      padding-#{$side}: 0 !important;
+    }
+  }
+}
+
+@include no-padding("left");
+@include no-padding("right");
+@include no-padding("top");
+@include no-padding("bottom");
+@include no-padding("all");
+
+/* bootstrap 3 input-group 100% width
+   http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
+.width-min {
+  width: 1% !important;
+}
+
+/* Makes toolbar not wrap on smaller screens
+   http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
+.flex-btn-group-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
