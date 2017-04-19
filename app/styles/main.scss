@@ -432,7 +432,7 @@ only screen and (min-resolution: 2dppx) {
   }
 }
 
-@media (max-width: $screen-sm-max) {
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min){
   .no-padding-r-sm {
     padding-left: 0;
   }
