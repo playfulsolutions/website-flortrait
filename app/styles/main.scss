@@ -1,42 +1,48 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 $brand-primary: #008490;
-$fa-font-path: "../bower_components/components-font-awesome/fonts";
-// bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-@import "components-font-awesome/scss/font-awesome.scss";
-// endbower
+
+// Core variables and mixins
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/normalize";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/print";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/glyphicons";
+
+// Core CSS
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/type";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/code";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/grid";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/tables";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/forms";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
+
+// Components
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/component-animations";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/dropdowns";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/button-groups";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/navs";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/navbar";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/labels";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/badges";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/thumbnails";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/media";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/list-group";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/panels";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-embed";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/wells";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/close";
+
+// Utility classes
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/utilities";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-utilities";
 
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
-}
-
-/* Webfont: Lato-Light */
-@font-face {
-  font-family: 'LatoWebLight';
-  src: url('fonts/lato-googlefont/Lato-Light.eot'); /* IE9 Compat Modes */
-  src: url('fonts/lato-googlefont/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('fonts/lato-googlefont/Lato-Light.woff2') format('woff2'), /* Modern Browsers */
-  url('fonts/lato-googlefont/Lato-Light.woff') format('woff'), /* Modern Browsers */
-  url('fonts/lato-googlefont/Lato-Light.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-
-/* Webfont: Lato-LightItalic */
-@font-face {
-  font-family: 'LatoWebLight';
-  src: url('fonts/lato-googlefont/Lato-LightItalic.eot'); /* IE9 Compat Modes */
-  src: url('fonts/lato-googlefont/Lato-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('fonts/lato-googlefont/Lato-LightItalic.woff2') format('woff2'), /* Modern Browsers */
-  url('fonts/lato-googlefont/Lato-LightItalic.woff') format('woff'), /* Modern Browsers */
-  url('fonts/lato-googlefont/Lato-LightItalic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
 }
 
 html {
@@ -46,7 +52,7 @@ html {
 
 body {
   height: 100%;
-  font-family: "LatoWebLight", sans-serif;
+  font-family: "Lato", sans-serif;
   color: #333;
   padding: 0;
 }
@@ -59,6 +65,14 @@ button:focus {
   display: none !important;
 }
 
+.text-default {
+  color: $headings-color;
+}
+
+.nopadding {
+  padding: 0;
+}
+
 .margin-t-50 {
   margin-top: 50px;
 }
@@ -67,12 +81,25 @@ button:focus {
   margin-top: 20px;
 }
 
+.margin-lr {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.margin-l {
+  margin-left: 15px;
+}
+
+.margin-r {
+  margin-right: 15px;
+}
+
 .halign-center {
   text-align: center;
 }
 
 //Phones (XS)
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .halign-center-xs {
     text-align: center;
   }
@@ -88,14 +115,14 @@ button:focus {
 }
 
 //Tablets (SM)
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   h4 {
     font-size: 16px;
   }
 }
 
 //Tablets and up (SM, MD, LG)
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .vcenter {
     display: flex;
     align-items: center;
@@ -106,7 +133,7 @@ button:focus {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .margin-t-40-lg {
     margin-top: 40px;
   }
@@ -219,7 +246,7 @@ only screen and (min-resolution: 2dppx) {
   text-align: left;
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
 
   h1, .h1 {
     font-size: 36px;
@@ -292,7 +319,7 @@ only screen and (min-resolution: 2dppx) {
   border-bottom: 1px solid;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .navbar-default, .navbar-collapse {
     padding-right: 0;
   }
@@ -347,7 +374,7 @@ only screen and (min-resolution: 2dppx) {
 
 .subnav {
   margin: 0;
-  top: 0px;
+  top: 0;
   z-index: 1020;
   background-color: rgb(247, 247, 247);
   border-bottom: 1px solid #E1E1E1;
@@ -356,7 +383,7 @@ only screen and (min-resolution: 2dppx) {
 
 .subnav.affix {
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 100%;
   z-index: 10;
 }
@@ -380,6 +407,37 @@ only screen and (min-resolution: 2dppx) {
   outline: none;
 }
 
+/* contact headings */
+.ch2 {
+  font-size: $font-size-h2;
+}
+
+.ch3 {
+  font-size: $font-size-h3;
+}
+
+.cfa-small-icon-lift {
+  font-size: 40px;
+}
+
+@media (max-width: $screen-xs-max) {
+  .ch2 {
+    font-size: $font-size-h3;
+  }
+  .ch3 {
+    font-size: $font-size-h4;
+  }
+  .cfa-small-icon-lift {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .no-padding-r-sm {
+    padding-left: 0;
+  }
+}
+
 .footer {
   position: absolute;
   bottom: -55px;
@@ -397,6 +455,10 @@ only screen and (min-resolution: 2dppx) {
 .break {
   white-space: normal;
   word-break: break-all;
+}
+
+.angular-google-map-container {
+  height: 300px;
 }
 
 /* make sure browsers use the pointer cursor for anchors, even with no href */

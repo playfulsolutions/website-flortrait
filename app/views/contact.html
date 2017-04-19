@@ -1,12 +1,25 @@
 <div class="container-fluid margin-t-50" ng-cloak>
   <div class="row">
-    <div class="col-md-offset-2 col-md-4">
-      <h2>Kontakt:</h2>
+    <div class="col-md-12">
+      <div map-lazy-load="{{vm.googleMapsUrl}}">
+        <ng-map
+          center="{{vm.center}}"
+          draggable="false"
+          zoom="15"
+          disable-default-u-i="true"
+          disable-double-click-zoom="true"
+          scrollwheel="false"
+          styles="[{'featureType': 'all','elementType': 'geometry.fill','stylers': [{'weight': '2.00'}]},{'featureType': 'all','elementType': 'geometry.stroke','stylers': [{'color': '#9c9c9c'}]},{'featureType': 'all','elementType': 'labels.text','stylers': [{'visibility': 'on'}]},{'featureType': 'landscape','elementType': 'all','stylers': [{'color': '#f2f2f2'}]},{'featureType': 'landscape','elementType': 'geometry.fill','stylers': [{'color': '#ffffff'}]},{'featureType': 'landscape.man_made','elementType': 'geometry.fill','stylers': [{'color': '#ffffff'}]},{'featureType': 'poi','elementType': 'all','stylers': [{'visibility': 'off'}]},{'featureType': 'road','elementType': 'all','stylers': [{'saturation': -100},{'lightness': 45}]},{'featureType': 'road','elementType': 'geometry.fill','stylers': [{'color': '#eeeeee'}]},{'featureType': 'road','elementType': 'labels.text.fill','stylers': [{'color': '#7b7b7b'}]},{'featureType': 'road','elementType': 'labels.text.stroke','stylers': [{'color': '#ffffff'}]},{'featureType': 'road.highway','elementType': 'all','stylers': [{'visibility': 'simplified'}]},{'featureType': 'road.arterial','elementType': 'labels.icon','stylers': [{'visibility': 'off'}]},{'featureType': 'transit','elementType': 'all','stylers': [{'visibility': 'off'}]},{'featureType': 'water','elementType': 'all','stylers': [{'color': '#46bcec'},{'visibility': 'on'}]},{'featureType': 'water','elementType': 'geometry.fill','stylers': [{'color': '#c8d7d4'}]},{'featureType': 'water','elementType': 'labels.text.fill','stylers': [{'color': '#070707'}]},{'featureType': 'water','elementType': 'labels.text.stroke','stylers': [{'color': '#ffffff'}]}]">
+          <marker position="{{vm.center}}" title="playful solutions"></marker>
+        </ng-map>
+      </div>
     </div>
   </div>
-  <div class="row" style="margin-top: 1%;">
-    <div class="col-md-offset-2 col-md-3">
-      <h3>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-5 col-xs-offset-1 col-xs-10">
+      <h2 class="ch2">Postanschrift</h2>
+      <hr>
+      <h3 class="ch3">
         <address>
           playful solutions<br>
           Anja Wippler<br>
@@ -15,23 +28,22 @@
         </address>
       </h3>
     </div>
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-12">
-          <h3>
-            <span class="glyphicon glyphicon-send" style="margin-right: 10px;"></span>
-            anja.wippler@icloud.com
-          </h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h3>
-            <span class="glyphicon glyphicon-phone" style="margin-right: 10px;"></span> +49 (0) 176 21534966
-          </h3>
-        </div>
-      </div>
-
+    <div class="col-md-offset-0 col-md-4 col-sm-offset-0 col-sm-5 col-xs-offset-1 col-xs-10 no-padding-r-sm">
+      <h2 class="ch2">Mail &amp; Telefon</h2>
+      <hr>
+      <h3 class="ch3">
+        <i class="fa fa-paper-plane margin-r" aria-hidden="true"></i>anja.wippler@icloud.com
+      </h3>
+      <h3 class="ch3">
+        <i class="fa fa-mobile margin-r cfa-small-icon-lift" aria-hidden="true"></i>+49 (0) 176 21534966
+      </h3>
+    </div>
+    <div class="col-md-offset-0 col-md-3 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+      <h2 class="ch2">Im Web</h2>
+      <hr>
+      <h1><a class="text-default" href="https://www.instagram.com/playfuldesignsolutions/" target="_blank"><i
+        class="fa fa-instagram margin-r"></i></a><a class="text-default" href="https://www.facebook.com/flortrait/"
+                                                    target="_blank"><i class="fa fa-facebook-square"></i></a></h1>
     </div>
   </div>
 </div>

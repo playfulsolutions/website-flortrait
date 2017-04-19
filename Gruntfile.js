@@ -19,6 +19,8 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
+  var modRewrite = require('connect-modrewrite');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -80,6 +82,7 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
+              modRewrite(['!\\.html|\\.js|\\.css|\\.png|\\.jpg|\\.eot|\\.otf|\\.svg|\\.ttf|\\.woff$ /index.html [L]']),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -99,6 +102,7 @@ module.exports = function (grunt) {
           port: 9001,
           middleware: function (connect) {
             return [
+              modRewrite(['!\\.html|\\.js|\\.css|\\.png|\\.jpg|\\.eot|\\.otf|\\.svg|\\.ttf|\\.woff$ /index.html [L]']),
               connect.static('.tmp'),
               connect.static('test'),
               connect().use(
@@ -406,6 +410,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
+          options: {
+            processContentExclude: ['**/*.{woff,woff2,ttf}']
+          },
           dot: true,
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
@@ -420,16 +427,6 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-          dest: '<%= yeoman.dist %>'
-        }, {
-          expand: true,
-          cwd: '.',
-          src: 'bower_components/components-font-awesome/fonts/*',
-          dest: '<%= yeoman.dist %>'
         }]
 
       },

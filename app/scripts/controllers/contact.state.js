@@ -7,7 +7,9 @@ angular.module('pfswebApp')
       url: '/contact',
       views: {
         'content@': {
-          templateUrl: 'views/contact.html'
+          templateUrl: 'views/contact.html',
+          controller: 'ContactCtrl',
+          controllerAs: 'vm'
         }
       },
       onEnter: [function () {

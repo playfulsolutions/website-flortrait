@@ -18,8 +18,8 @@ angular
     'ngTouch',
     'ui.router',
     'ui.bootstrap',
-    'angular-loading-bar',
-    'angular.backtop'
+    'angular.backtop',
+    'ngMap'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
