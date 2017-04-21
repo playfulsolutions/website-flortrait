@@ -1,5 +1,5 @@
 <nav sticky-subnav id="subnav" class="navbar subnav navbar-static-top" ng-style="style" role="navigation">
-  <div class="container visible-xs hidden-print">
+  <div class="container visible-xs">
     <div class="navbar-header">
       <button ng-click="vm.moveToSection('section-supplySources', 100)" type="button"
               class="buy-btn btn btn-xs btn-default">Kaufen
@@ -8,13 +8,13 @@
          ng-click="vm.collapseNavbar()"><span>Flortrait.</span></a>
     </div>
   </div>
-  <div class="container-fluid hidden-xs hidden-print">
+  <div class="container-fluid hidden-xs">
     <div class="navbar-header">
       <a class="navbar-brand" style="color: #000;" ui-sref="flortrait"
          ng-click="vm.collapseNavbar()"><span>Flortrait.</span></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li style="padding-right: 15px;">
+      <li>
         <button ng-click="vm.moveToSection('section-supplySources', 100)" type="button"
                 class="btn btn-xs btn-primary buy-btn">Kaufen
         </button>

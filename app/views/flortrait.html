@@ -1,64 +1,72 @@
 <div class="container-fluid" ng-cloak="">
-
   <!-- INTRO -->
-  <div class="row vcenter" set-height offset="150">
+  <div class="row">
     <div class="col-xs-12 hidden-md hidden-sm hidden-lg hidden-print">
-      <div class="flortrait-s01 margin-t-20 pull-right"></div>
+      <div class="img-flortrait-s01 margin-t-20"></div>
     </div>
     <div
       class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-5 col-xs-12 halign-center-xs"
-      ng-class="{'animated fadeInUp': isMDandUp}">
+      ng-class="{'animated fadeIn': isMDandUp}">
+      <img src="../images/flortrait/flortrait-logo.svg" class="hidden-xs"
+           style="margin-bottom: 10%; margin-top: 50%; width: 70%; height: auto;">
       <h3>
         Bühne frei für deinen Blumenstrauß. Das Flortrait ist die erste Vase für die Wand und somit ein echt
         lebendiges Stillleben für dein Zuhause.
       </h3>
       <h4 class="hidden-sm hidden-xs"><a ng-click="vm.moveToSection('section-variants', 100)">Varianten ></a></h4>
     </div>
-    <div class="col-md-6 col-sm-6 hidden-xs margin-t-20 margin-t-40-lg flortrait-s01 animated fadeIn"></div>
+    <div class="col-md-6 col-sm-6 hidden-xs margin-t-20 margin-t-40-lg animated fadeIn">
+      <div class="img-flortrait-s01"></div>
+    </div>
   </div>
 
-  <div class="row flortrait-section-a" id="section-variants">
+  <div class="row flortrait-section-gray halign-center" id="section-variants">
     <div
-      class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-11 col-sm-offset-1 col-sm-11 col-xs-offset-0 col-xs-12 halign-center-xs">
+      class="col-md-12">
       <h1>Entdecke drei wundervolle Varianten für dein Flortrait.</h1>
     </div>
   </div>
 
   <!-- NATUR -->
-  <div class="row flortrait-section-b vcenter" id="section-natur" set-height offset="100">
+  <div class="row flortrait-section-white vcenter margin-t-50 margin-t-20-xs" id="section-natur">
     <div class="col-lg-offset-1 col-lg-4 col-md-offset-0 col-md-6 col-sm-offset-0 col-sm-5 hidden-xs">
-      <div class="flortrait-natur_bunt"></div>
+      <div class="img-flortrait-natur_bunt"></div>
     </div>
     <div
       class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-5 col-xs-offset-0 col-xs-12 halign-center-xs">
-                <span style="display: inline-flex; align-items: center;"><img
-                  src="../images/flortrait/logo-natur.svg"
-                  style="width: 50px; height: 50px;"/><h1
-                  style="padding-left: 10px;"><strong>natur</strong></h1></span>
+      <h1 class="flortrait-logo-headline"><i class="icon-logo-natur margin-r"></i><strong>natur</strong></h1>
       <h3><strong>Einzigartigkeit durch natürliche Holzmaserung.</strong></h3>
-      <h4 style="padding-top: 10px;">Mit Bienenwachsemulsion versiegelt. Die
+      <div class="row visible-xs">
+        <div class="col-xs-offset-4 col-xs-4">
+          <hr class="margin-b-0">
+        </div>
+      </div>
+      <div class="row visible-xs">
+        <div class="col-xs-12 halign-center">
+          <div class="img-flortrait-natur_bunt"></div>
+        </div>
+      </div>
+      <h4 class="margin-b-50">Mit Bienenwachsemulsion versiegelt. Die
         Halterung ist neutral (transparent) oder mit farbigem Akzent in rot oder blau erhältlich.</h4>
-    </div>
-    <div class="col-xs-12 hidden-lg hidden-md hidden-sm" style="display: flex; justify-content: center;">
-      <div class="flortrait-natur_bunt"></div>
-    </div>
-    <div class="col-xs-offset-2 col-xs-8 visible-xs">
-      <!-- Abschnittstrenner für Handys -->
-      <hr>
     </div>
   </div>
 
   <!-- DO IT YOURSELF -->
-  <div class="row flortrait-section-b vcenter" set-height offset="50">
+  <div class="row flortrait-section-gray vcenter margin-t-50 margin-t-20-xs" id="section-diy">
     <div
       class="col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-5 col-xs-offset-0 col-xs-12 halign-center-xs">
-      <div class="flortrait-section-b-heading">
-                    <span style="display: inline-flex; align-items: center;"><img
-                      src="../images/flortrait/logo-diy.svg"
-                      style="width: 60px; height: 60px;"/><h1
-                      style="padding-left: 10px;"><strong>diy</strong></h1></span>
-      </div>
+      <h1 class="flortrait-logo-headline"><i class="icon-logo-diy margin-r"></i><strong>diy</strong></h1>
       <h3><strong>Dein ganz persönliches Flortrait.</strong></h3>
+      <div class="row visible-xs">
+        <div class="col-xs-offset-4 col-xs-4">
+          <hr class="margin-b-0">
+        </div>
+      </div>
+      <div class="row visible-xs">
+        <div class="col-xs-12 halign-center">
+          <div class="img-flortrait-twin_diy"></div>
+        </div>
+      </div>
       <h4 style="padding-top: 10px;">
         Lasse deiner Kreativität freien Lauf. Nutze den Bausatz und
         erschaffe ein Unikat, dass es so nur von dir geben kann.
@@ -71,88 +79,110 @@
         bemalt,
         bedruckt oder mit Stoff bezogen - du bestimmst wie es am Ende aussieht.
       </h4>
-      <h4>
+      <h4 class="margin-t-50">
         <a href="https://flortrait.wordpress.com" target="_blank">Lass dich im DIY-Blog inspirieren ></a>
       </h4>
     </div>
-    <div class="col-lg-offset-1 col-lg-6 col-md-7 col-sm-6 col-xs-offset-0 col-xs-12 halign-center-xs">
-      <div class="flortrait-twin_diy"></div>
-    </div>
-    <div class="col-xs-offset-2 col-xs-8 visible-xs">
-      <!-- Abschnittstrenner für Handys -->
-      <hr>
+    <div class="col-lg-offset-1 col-lg-5 col-md-offset-1 col-md-6 col-sm-6 hidden-xs">
+      <div class="img-flortrait-twin_diy"></div>
     </div>
   </div>
 
   <!-- ANTIK -->
-  <div class="row flortrait-section-b vcenter" set-height offset="50">
+  <div class="row flortrait-section-white vcenter margin-b-50">
     <div class="col-lg-offset-1 col-lg-4 col-md-offset-0 col-md-6 col-sm-offset-0 col-sm-5 hidden-xs">
-      <div class="flortrait-antik-lilastrauss"></div>
+      <div class="img-flortrait-antik-lilastrauss"></div>
     </div>
     <div
       class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-5 col-xs-offset-0 col-xs-12 halign-center-xs">
-                <span style="display: inline-flex; align-items: center;"><img
-                  src="../images/flortrait/logo-antik.svg"
-                  style="width: 25px; height: 50px;"/><h1
-                  style="padding-left: 10px;"><strong>antik</strong></h1></span>
-
-      <h3>
+      <h1 class="flortrait-logo-headline"><i class="icon-logo-antik margin-r"></i><strong>antik</strong></h1>
+      <h3 class="margin-t-50">
         <strong>Moderne Form - aber irgendwie schon immer bei dir and der Wand.</strong>
       </h3>
-
-      <h4 style="padding-top: 10px;">
+      <div class="row visible-xs">
+        <div class="col-xs-offset-4 col-xs-4">
+          <hr class="margin-b-0">
+        </div>
+      </div>
+      <div class="row visible-xs">
+        <div class="col-xs-12 halign-center">
+          <div class="img-flortrait-antik-lilastrauss"></div>
+        </div>
+      </div>
+      <h4>
         Die Oberfäche wurde mit Antikwachslasur behandelt und lässt die individuelle Maserung des Holzes in
         seidigem Glanz erstrahlen.
       </h4>
     </div>
-    <div class="col-xs-12 hidden-lg hidden-md hidden-sm" style="display: flex; justify-content: center;">
-      <div class="flortrait-antik-lilastrauss"></div>
-    </div>
   </div>
 
   <!-- Bezugsquellen (Shoplinks etc. pp.) -->
-  <div class="row flortrait-section-a" id="section-supplySources">
+  <div class="row flortrait-section-gray halign-center" id="section-supplySources">
+    <div class="col-md-12">
+      <h1><span class="icon-bag flortrait-logo-headline" aria-hidden="true"></span></h1>
+    </div>
     <div
-      class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-11 col-sm-offset-1 col-sm-11 col-xs-offset-0 col-xs-12">
+      class="col-md-12">
       <h1>Hier kannst du dein Flortrait kaufen.</h1>
     </div>
   </div>
-  <div class="row flortrait-section-b" set-height offset="200">
-    <div class="col-lg-offset-1 col-lg-4 col-md-offset-1 col-md-5 col-sm-offset-1 col-sm-5 col-xs-12">
-      <h2>Online</h2>
+
+  <div class="row margin-t-50 margin-b-50">
+    <div class="col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4 halign-center">
+      <span class="icon-laptop flortrait-logo-headline"></span>
+      <h1><strong>Online</strong></h1>
       <hr>
-      <a class="btn btn-lg btn-default" href="http://selekkt.com/catalogsearch/result/?q=flortrait"
-         target="_blank"><i class="fa fa-external-link hidden-xs hidden-sm" aria-hidden="true"></i> selekkt</a>
-      <a class="btn btn-lg btn-default" href="https://www.heimatwerke.de/catalogsearch/result/?q=Flortrait"
-         target="_blank"><i class="fa fa-external-link hidden-xs hidden-sm" aria-hidden="true"></i> HEIMATWERKE.DE</a>
-      <h2>Im Atelier</h2>
-      <hr>
-      <p>(Nach Absprache)</p>
-      <address>
-        <strong>Anja Wippler | playfulsolutions</strong><br>
-        Könneritzstr. 25<br>
-        01069 Dresden<br>
-        <abbr title="E-Mail">Mail:</abbr> <a href="mailto:anja.wippler@icloud.com">anja.wippler@icloud.com</a>
-      </address>
-    </div>
-    <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-4 col-xs-12">
-      <h2>Im Ladengeschäft</h2>
-      <hr>
-      <address>
-        <strong>Vielfach</strong><br>
-        Karl-Liebknecht-Str. 66<br>
-        04275 Leipzig<br>
-        <abbr title="Website">Web:</abbr> <a href="http://www.vielfach-leipzig.de"
-                                             target="_blank">vielfach-leipzig.de</a>
-      </address>
-      <address>
-        <strong>Sächsisches Heimatwerk</strong><br>
-        August-Bebel-Straße 77<br>
-        01728 Bannewitz<br>
-        <abbr title="Website">Web:</abbr> <a href="http://www.heimatwerke.de/"
-                                             target="_blank">heimatwerke.de</a>
-      </address>
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10 col-sm-offset-2 col-sm-8">
+          <a class="btn btn-lg btn-default btn-block" href="http://selekkt.com/brands/playfulsolutions"
+             target="_blank">selekkt - Heim für junges Design</a>
+          <a class="btn btn-lg btn-default btn-block" href="https://www.heimatwerke.de/catalogsearch/result/?q=Flortrait"
+             target="_blank">HEIMATWERKE.DE</a>
+        </div>
+      </div>
     </div>
   </div>
-  <back-top class="hidden-xs"><i class="fa fa-angle-up text-muted" aria-hidden="true" style="font-size: 24px;"></i></back-top>
+  <div class="row margin-t-50 margin-b-50">
+    <div class="col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4 halign-center">
+      <span class="icon-easel flortrait-logo-headline"></span>
+      <h1><strong>Im Atelier</strong></h1>
+      <hr>
+      <p>(Nach Absprache)</p>
+      <h3>
+        <address>
+          <strong>Anja Wippler | playfulsolutions</strong><br>
+          Könneritzstr. 25<br>
+          01069 Dresden<br>
+          <abbr title="E-Mail">Mail:</abbr> <a href="mailto:anja.wippler@icloud.com">anja.wippler@icloud.com</a>
+        </address>
+      </h3>
+    </div>
+  </div>
+  <div class="row margin-t-50 margin-b-50">
+    <div class="col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4 halign-center">
+      <span class="icon-home-outline flortrait-logo-headline"></span>
+      <h1><strong>Im Ladengeschäft</strong></h1>
+      <hr>
+      <h3 class="margin-b-50">
+        <address>
+          <strong>Vielfach</strong><br>
+          Karl-Liebknecht-Str. 66<br>
+          04275 Leipzig<br>
+          <abbr title="Website">Web:</abbr> <a href="http://www.vielfach-leipzig.de"
+                                               target="_blank">vielfach-leipzig.de</a>
+        </address>
+      </h3>
+      <h3>
+        <address>
+          <strong>Sächsisches Heimatwerk</strong><br>
+          August-Bebel-Straße 77<br>
+          01728 Bannewitz<br>
+          <abbr title="Website">Web:</abbr> <a href="http://www.heimatwerke.de/"
+                                               target="_blank">heimatwerke.de</a>
+        </address>
+      </h3>
+    </div>
+  </div>
+  <back-top class="hidden-xs"><i class="fa fa-angle-up text-muted" aria-hidden="true" style="font-size: 24px;"></i>
+  </back-top>
 </div>

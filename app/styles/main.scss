@@ -38,6 +38,165 @@ $brand-primary: #008490;
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/utilities";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-utilities";
 
+// Retina Image Mixin
+
+/**
+ * Allows you to use retina images at various pixel densities.
+ * Examples:
+ *
+ *   @include retina(/images/mypic.jpg, 2);
+ *   @include retina(/images/mypic.jpg, 3, 100px 100px, left top no-repeat transparent);
+ *
+ * @param  {Value}  $path               The path to the file name minus extension.
+ * @param  {Number} $cap:    2          The highest pixel density level images exist for.
+ * @param  {Value}  $size:   auto auto  The intended width of the rendered image.
+ * @param  {Value}  $extras: null       Any other `background` values to be added.
+ */
+@mixin retina($path, $cap: 2, $width: auto, $height: auto, $extras: null) {
+
+  /*
+   * Set a counter and get the length of the image path.
+   */
+  $position: -1;
+  $strpath: '#{$path}';
+  $length: str-length($strpath);
+
+  /*
+   * Loop ver the image path and figure out the
+   * position of the dot where the extension begins.
+   */
+  @for $i from $length through $length - 10 {
+    @if $position == -1 {
+      $char: str-slice($strpath, $i, $i);
+      @if str-index($char, ".") == 1 {
+        $position: $i;
+      }
+    }
+  }
+
+  /*
+   * If we were able to figure out where the extension is,
+   * slice the path into a base and an extension. Use that to
+   * calculate urls for different density environments. Set
+   * values for different environments.
+   */
+  @if $position != -1 {
+    $ext: str-slice($strpath, $position + 1, $length);
+    $base: str-slice($strpath, 1, $position - 1);
+    $at1x_path: "#{$base}.#{$ext}";
+    $at2x_path: "#{$base}@2x.#{$ext}";
+
+    /*
+     * Set a base background for 1x environments.
+     */
+    display: inline-block;
+    background: url("#{$at1x_path}") $extras;
+    max-width: 100%;
+    width: #{$width}px;
+    height: 0;
+    padding-top: percentage($height / $width);
+    background-size: contain;
+
+    /*
+     * Create an @2x-ish media query.
+     */
+    @media all and (-webkit-min-device-pixel-ratio: 1.5),
+    all and (-o-min-device-pixel-ratio: 3/2),
+    all and (min--moz-device-pixel-ratio: 1.5),
+    all and (min-device-pixel-ratio: 1.5) {
+      background: url("#{$at2x_path}") $extras;
+      background-size: contain;
+    }
+
+    /*
+     * Create media queries for all environments that the user has
+     * provided images for.
+     */
+    @if $cap >= 2 {
+      @for $env from 2 through $cap {
+        $suffix: "@#{$env}x";
+        @media (-webkit-min-device-pixel-ratio: $env),
+        (min-resolution: $env * 96dpi) {
+          background: url("#{$base}#{$suffix}.#{$ext}") $extras;
+          background-size: contain;
+        }
+      }
+    }
+
+    /*
+     * If anything went wrong trying to separate the file from its
+     * extension, set a background value without doing anything to it.
+     */
+  } @else {
+    display: inline-block;
+    background: url("#{$path}") $extras;
+    max-width: 100%;
+    width: #{$width}px;
+    height: 0;
+    padding-top: percentage($height / $width);
+    background-size: contain;
+  }
+
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../styles/fonts/icomoon.eot?tjmsap');
+  src: url('../styles/fonts/icomoon.eot?tjmsap#iefix') format('embedded-opentype'),
+  url('../styles/fonts/icomoon.ttf?tjmsap') format('truetype'),
+  url('../styles/fonts/icomoon.woff?tjmsap') format('woff'),
+  url('../styles/fonts/icomoon.svg?tjmsap#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-easel:before {
+  content: "\e903";
+}
+
+.icon-home-outline:before {
+  content: "\e904";
+}
+
+.icon-monitor:before {
+  content: "\e905";
+}
+
+.icon-laptop:before {
+  content: "\e906";
+}
+
+.icon-bag:before {
+  content: "\e908";
+}
+
+.icon-logo-natur:before {
+  content: "\e900";
+}
+
+.icon-logo-diy:before {
+  content: "\e901";
+}
+
+.icon-logo-antik:before {
+  content: "\e902";
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -55,6 +214,30 @@ body {
   font-family: "Lato", sans-serif;
   color: #333;
   padding: 0;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+@media (max-width: $screen-xs-max) {
+  h1 {
+    font-size: $font-size-h2;
+  }
+  h2 {
+    font-size: $font-size-h3;
+  }
+  h3 {
+    font-size: $font-size-h4;
+  }
 }
 
 button:focus {
@@ -81,6 +264,18 @@ button:focus {
   margin-top: 20px;
 }
 
+.margin-b-50 {
+  margin-bottom: 50px;
+}
+
+.margin-b-20 {
+  margin-bottom: 20px;
+}
+
+.margin-b-0 {
+  margin-bottom: 0px;
+}
+
 .margin-lr {
   margin-left: 15px;
   margin-right: 15px;
@@ -95,11 +290,20 @@ button:focus {
 }
 
 .halign-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 //Phones (XS)
 @media (max-width: $screen-xs-max) {
+
+  .margin-t-20-xs {
+    margin-top: 20px;
+  }
+
+  .margin-b-50-xs {
+    margin-bottom: 50px;
+  }
+
   .halign-center-xs {
     text-align: center;
   }
@@ -128,7 +332,7 @@ button:focus {
     align-items: center;
   }
 
-  .flortrait-section-b {
+  .flortrait-section-white {
     padding-bottom: 40px;
   }
 }
@@ -144,99 +348,41 @@ button:focus {
   padding-bottom: 0;
 }
 
-.flortrait-s01 {
-  display: inline-block;
-  width: 300px;
-  height: 350px;
-  background: url("../images/flortrait/flortrait-s01.jpg") no-repeat right top;
-  background-size: contain;
+/*!
+ * -----------------
+ * IMAGES FLORTRAIT
+ * -----------------
+ */
+.img-flortrait-s01 {
+  @include retina('../images/flortrait/flortrait-s01.jpg', 2, 600, 700, no-repeat left top);
 }
 
-.flortrait-natur_bunt {
-  display: inline-block;
-  width: 300px;
-  height: 365px;
-  background: url("../images/flortrait/flortrait-natur_bunt.jpg") no-repeat right top;
-  background-size: contain;
+.img-flortrait-natur_bunt {
+  @include retina('../images/flortrait/flortrait-natur_bunt.jpg', 2, 500, 609, no-repeat left top);
 }
 
-.flortrait-twin_diy {
-  display: inline-block;
-  width: 300px;
-  height: 287px;
-  background: url("../images/flortrait/flortrait-2er_diy.jpg") no-repeat right top;
-  background-size: contain;
+.img-flortrait-twin_diy {
+  @include retina('../images/flortrait/flortrait-2er_diy.jpg', 2, 500, 478, no-repeat left top);
 }
 
-.flortrait-antik-lilastrauss {
-  display: inline-block;
-  width: 300px;
-  height: 424px;
-  background: url("../images/flortrait/flortrait-antik_lilastrauss.jpg") no-repeat right top;
-  background-size: contain;
+.img-flortrait-antik-lilastrauss {
+  @include retina("../images/flortrait/flortrait-antik_lilastrauss.jpg", 2, 500, 706, no-repeat left top);
 }
 
-.flortrait-preorder-bg01 {
-  display: inline-block;
-  width: 100%;
-  height: 300px;
-  background: url("../images/flortrait/flortrait-preorder-bg01.jpg") no-repeat left top;
-  background-size: cover;
-}
+// --> END FLORTRAIT IMAGES
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
-  .flortrait-s01 {
-    background: url("../images/flortrait/flortrait-s01@2x.jpg") no-repeat center top;
-    background-size: contain;
-  }
-
-  .flortrait-natur_bunt {
-    background: url("../images/flortrait/flortrait-natur_bunt@2x.jpg") no-repeat right top;
-    background-size: contain;
-  }
-
-  .flortrait-twin_diy {
-    background: url("../images/flortrait/flortrait-2er_diy@2x.jpg") no-repeat right top;
-    background-size: contain;
-  }
-
-  .flortrait-antik-lilastrauss {
-    background: url("../images/flortrait/flortrait-antik_lilastrauss@2x.jpg") no-repeat right top;
-    background-size: contain;
-  }
-}
-
-.section-divider-gradient-buttom {
-  background: rgba(247, 247, 247, 1);
-  background: -moz-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247, 247, 247, 1)), color-stop(100%, rgba(255, 255, 255, 0.57)));
-  background: -webkit-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
-  background: -o-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
-  background: -ms-linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
-  background: linear-gradient(to bottom, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 0.57) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#ffffff', GradientType=0);
-}
-
-.flortrait-section-a {
+.flortrait-section-gray {
   background-color: #f9f9f9;
   padding-top: 10px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   margin-top: 15px;
-  border-bottom: 1px #E1E1E1 solid;
-  border-top: 1px #E1E1E1 solid;
 }
 
-.flortrait-section-a-heading {
-  text-align: center;
-  padding-top: 20px;
+.flortrait-logo-headline {
+  font-size: 50px;
 }
 
-.flortrait-section-b {
+.flortrait-section-white {
   padding-top: 10px;
 }
 
@@ -257,38 +403,13 @@ only screen and (min-resolution: 2dppx) {
     padding-bottom: 40px;
   }
 
-  .flortrait-s01 {
-    display: inline-block;
-    width: 600px;
-    height: 700px;
-  }
-
-  .flortrait-natur_bunt {
-    display: inline-block;
-    width: 500px;
-    height: 609px;
-  }
-
-  .flortrait-twin_diy {
-    display: inline-block;
-    width: 500px;
-    height: 473px;
-    padding-top: 0;
-    margin-top: 65px;
-  }
-
-  .flortrait-antik-lilastrauss {
-    display: inline-block;
-    width: 500px;
-    height: 705px;
-  }
-
   .flortrait-section-top {
     margin-bottom: 80px;
   }
 
-  .flortrait-section-a {
+  .flortrait-section-gray {
     padding-top: 40px;
+    padding-bottom: 50px;
   }
 
   .flortrait-section-a-heading {
@@ -408,6 +529,10 @@ only screen and (min-resolution: 2dppx) {
 }
 
 /* contact headings */
+.ch1 {
+  font-size: $font-size-h1;
+}
+
 .ch2 {
   font-size: $font-size-h2;
 }
@@ -421,6 +546,9 @@ only screen and (min-resolution: 2dppx) {
 }
 
 @media (max-width: $screen-xs-max) {
+  .ch1 {
+    font-size: $font-size-h2;
+  }
   .ch2 {
     font-size: $font-size-h3;
   }
@@ -432,7 +560,7 @@ only screen and (min-resolution: 2dppx) {
   }
 }
 
-@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min){
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
   .no-padding-r-sm {
     padding-left: 0;
   }
