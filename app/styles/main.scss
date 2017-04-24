@@ -1,5 +1,10 @@
 $brand-primary: #008490;
 
+$line-height-base: 1.8;
+$line-height-small: 1.8;
+$headings-line-height:    1.2 !default;
+
+
 // Core variables and mixins
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
@@ -218,6 +223,8 @@ body {
 
 h1 {
   font-size: $font-size-h1;
+  line-height: 1.4em;
+  letter-spacing: 2px;
 }
 
 h2 {
@@ -226,6 +233,12 @@ h2 {
 
 h3 {
   font-size: $font-size-h3;
+  line-height: 1.4em;
+  letter-spacing: 1px;
+}
+
+h4 {
+  line-height: 1.6em;
 }
 
 @media (max-width: $screen-xs-max) {
