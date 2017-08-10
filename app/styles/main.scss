@@ -371,15 +371,15 @@ button:focus {
 }
 
 .img-flortrait-natur_bunt {
-  @include retina('../images/flortrait/flortrait-natur_bunt.jpg', 2, 500, 609, no-repeat left top);
+  @include retina('../images/flortrait/flortrait-natur_bunt.jpg', 2, 500, 609, no-repeat center);
 }
 
 .img-flortrait-twin_diy {
-  @include retina('../images/flortrait/flortrait-2er_diy.jpg', 2, 500, 478, no-repeat left top);
+  @include retina('../images/flortrait/flortrait-2er_diy.jpg', 2, 500, 478, no-repeat center);
 }
 
 .img-flortrait-antik-lilastrauss {
-  @include retina("../images/flortrait/flortrait-antik_lilastrauss.jpg", 2, 500, 706, no-repeat left top);
+  @include retina("../images/flortrait/flortrait-antik_lilastrauss.jpg", 2, 500, 706, no-repeat center);
 }
 
 // --> END FLORTRAIT IMAGES
