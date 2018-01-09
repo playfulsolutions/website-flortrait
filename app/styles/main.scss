@@ -370,6 +370,10 @@ button:focus {
   @include retina('../images/flortrait/flortrait-s01.jpg', 2, 600, 700, no-repeat left top);
 }
 
+.img-flortrait-s01xs {
+  @include retina('../images/flortrait/flortrait-s01xs.jpg', 2, 600, 600, no-repeat center top);
+}
+
 .img-flortrait-natur_bunt {
   @include retina('../images/flortrait/flortrait-natur_bunt.jpg', 2, 500, 609, no-repeat center);
 }
