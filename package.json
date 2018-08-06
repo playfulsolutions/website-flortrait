@@ -44,5 +44,8 @@
     "connect-modrewrite": "^0.10.1",
     "express": "^4.15.2",
     "helmet": "^3.5.0"
+  },
+  "scripts": {
+    "build": "grunt build && cp ./docs/index.html ./docs/404.html"
   }
 }
